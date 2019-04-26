@@ -39,7 +39,6 @@ export default class NavBar extends React.Component {
   }
 
   render() {
-    //console.log(this.props);
     return (
       <div>
         <Navbar  color="dark" light expand="md">
@@ -60,6 +59,12 @@ export default class NavBar extends React.Component {
                   <DropdownItem  className="link"  >
                   <NavLink onClick={() => this.handleClickedLink('/hotels')} >
                       Hotels
+                  </NavLink>
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem  className="link"  >
+                  <NavLink onClick={() => this.handleClickedLink('/profile')} >
+                      Your Profile
                   </NavLink>
                   </DropdownItem>
                   <DropdownItem divider />

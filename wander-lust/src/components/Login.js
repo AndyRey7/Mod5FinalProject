@@ -18,14 +18,31 @@ class Login extends React.Component {
     }
 
     render() {
+        let style={
+            paddingTop: '23px'
+        }
         return (
-            <form onSubmit={this.submitHandler}>
-                <input name="email" placeholder="email" value={this.state.email} onChange={this.handleChange}/>
-                <input name="password" placeholder="Password" type="password" value={this.state.password} onChange={this.handleChange}/>
-                <input type="submit" value="Log In"/>
+            <div className="ui two column centered grid">
+            <form style={style} className="ui form" onSubmit={this.submitHandler}>
+                <div className="fields">
+                    <div className="field">
+                      <label>Email</label>
+                      <input onChange={this.handleChange} name="email" value={this.state.email} placeholder="Enter Your Email"/>
+                    </div>
+                    <div className="field">
+                      <label>Password</label>
+                      <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder="Enter Your Password"/>
+                    </div>
+                    <div className="field" style={style}>
+                        <button className="ui animated button" type="submit">
+                        <div className="visible content">Enter</div>
+                        <div className="hidden content">WanderLust</div>
+                        </button>
+                    </div>
+                </div>
             </form>
+            </div>
         )
     }
 }
-
 export default Login

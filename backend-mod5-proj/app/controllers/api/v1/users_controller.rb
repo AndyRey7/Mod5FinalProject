@@ -12,9 +12,10 @@ class Api::V1::UsersController < ApplicationController
 
     def create
       @user = User.new(user_params)
+
       if @user.save
         @token = JWT.encode({user_id: @user.id}, "yeah")
-       render json: { user: @user, jwt: @token }, status: :created
+       render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
       else
         render json: @user.errors.full_messages , status: :unprocessable_entity
       end
@@ -37,7 +38,7 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params
-      params.require(:user).permit(:email, :password, :name,)
+      params.require(:user).permit(:email, :password, :name)
     end
 
     def find_user

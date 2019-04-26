@@ -4,9 +4,10 @@ import './App.css';
 import { Route, Switch, withRouter } from "react-router-dom";
 import SignUp from './components/SignUp'
 import Login from './components/Login'
-import NavBar from './components/NavBar'
-import Home from './components/Home'
-import HotelContainer from './components/HotelContainer'
+import NavBar from './containers/NavBar'
+import HotelContainer from './containers/HotelContainer'
+import Profile from './components/Profile'
+import Footer from './components/Footer'
 
 
 
@@ -31,12 +32,12 @@ class App extends React.Component {
               {
             this.setState({ user: userData.user }, () => {
               console.log('mounting',userData);
-              this.props.history.push("/home");
+              this.props.history.push("/profile");
             });
           }
       )
-      : this.props.history.push("/signup");
-  };
+      : this.props.history.push("/login");
+    };
 
   signupSubmitHandler = (userInfo) => {
     fetch("http://localhost:3000/api/v1/users", {
@@ -45,15 +46,19 @@ class App extends React.Component {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      body: JSON.stringify( userInfo )
-    })
+      body: JSON.stringify( {user : userInfo} )
+      })
       .then(resp => resp.json())
       .then(userData => {
-        this.setState({user: userData} , () => {
+          if(userData.user === undefined) {
+             return window.alert(userData[0])
+          }
+        this.setState({user: userData.user} , () => {
+            console.log(userData)
           localStorage.setItem("token", userData.jwt);
-          this.props.history.push("/home");
+          this.props.history.push("/profile");
         });
-      });
+    });
   };
 
   loginSubmitHandler = userInfo => {
@@ -64,17 +69,17 @@ class App extends React.Component {
         accepts: "application/json"
       },
       body: JSON.stringify({ user: userInfo })
-    })
+      })
       .then(resp => resp.json())
       .then(userData =>
       {
         localStorage.setItem('token', userData.jwt)
         this.setState(
-          { user: userData.user }, () => this.props.history.push("/home")
+          { user: userData.user }, () => this.props.history.push("/profile")
         )
       }
-  );
-  };
+    )
+  }
 
   handleLogout = () => {
     this.setState({
@@ -97,10 +102,12 @@ class App extends React.Component {
             path="/login"
             render={() => <Login user={this.state.user}  submitHandler={this.loginSubmitHandler} />}
           />
-          <Route path="/home" render={() => <Home user={this.state.user} />} />
+          <Route path="/profile" render={() => <Profile user={this.state.user} />} />
           <Route path="/hotels" render={() => <HotelContainer />}/>
+
           <Route path="/"  />
         </Switch>
+        <Footer/>
       </div>
     );
   }
