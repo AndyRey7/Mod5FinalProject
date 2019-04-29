@@ -32,9 +32,10 @@ export default class RoomContainer extends React.Component {
         return (
             <div className="white">
                 <h3>Rooms</h3>
-                <br/>
+                <div className= "ui three column grid">
                 {this.allRooms()}
-                < Reservation user={this.props.user}  rooms={this.state.rooms} />
+                </div>
+                < Reservation user={this.props.user} handleClick={this.handleClick}   />
             </div>
         )
     }
