@@ -6,9 +6,9 @@ const Profile = (props) => {
     const getRoomInfo = () => {
 
         return props.user.rooms.map(room => {
-            const hotel = props.user.hotels.map(h => <div>{h.name} {h.address}</div>)
+            const hotel = props.user.hotels.map(h => <div key={h.id}>{h.name} {h.address}</div>)
             return (
-                <li>
+                <li key={room.id}>
                 <p>{room.description}</p>
                 <p>Room type: <strong>{room.category}</strong></p>
                 <img src={room.img_URL} alt={room.category} />

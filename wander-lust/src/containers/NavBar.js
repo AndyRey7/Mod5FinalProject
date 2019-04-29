@@ -43,7 +43,7 @@ export default class NavBar extends React.Component {
       <div>
         <Navbar  color="dark" light expand="md">
           <NavbarBrand className="link" onClick={() => this.handleClickedLink('/')} >
-              <span className="nav-titles">WanderLust<i class="paper plane icon"></i></span>
+              <span className="nav-titles">WanderLust<i className="paper plane icon"></i></span>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

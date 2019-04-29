@@ -1,10 +1,12 @@
 import React from 'react'
 import Reservation from '../components/Reservation.js'
+import RoomCard from '../components/RoomCard'
 
 export default class RoomContainer extends React.Component {
 
     state = {
-        rooms: []
+        rooms: [],
+        room: {}
     }
 
     componentDidMount() {
@@ -16,22 +18,15 @@ export default class RoomContainer extends React.Component {
             })
         })
     }
+    handleClick = (room) => {
+        this.setState({ room }, ()=> console.log(this.state.room))
+    }
 
     allRooms = () => {
-        return this.state.rooms.map(room => {
-            return (
-                <div>
-                    <img src ={room.img_URL} alt="a room"/>
-                    <p>Room type: <strong>{room.category}</strong> <br/>Description: {room.description}  </p>
-                    <span>Room avaliable in {room.hotel.name}. Located at {room.hotel.address}</span>
-                    <button>Want to book this room?</button>
-                    <br/>
-                    <br/>
-                    <br/>
-                </div>
-            )
-        })
+        return this.state.rooms.map(room => <RoomCard key={room.id} room={room} handleClick={this.handleClick} /> )
     }
+
+
 
     render() {
         return (
