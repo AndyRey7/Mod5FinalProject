@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, Redirect} from "react-router-dom";
+//import { Link, Redirect} from "react-router-dom";
 
 import {
   Collapse,
@@ -34,8 +34,8 @@ export default class NavBar extends React.Component {
     }
   }
 
-  handleClickedLink = (location) => {
-    this.props.history.push(location);
+  handleClickedLink = (routePath) => {
+    this.props.history.push(routePath);
   }
 
   render() {
@@ -56,9 +56,15 @@ export default class NavBar extends React.Component {
                   <span className="nav-titles">{this.props.user.name}</span>
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem  className="link"  >
+                  <DropdownItem  className="link">
                   <NavLink onClick={() => this.handleClickedLink('/hotels')} >
                       Hotels
+                  </NavLink>
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem  className="link"  >
+                  <NavLink onClick={() => this.handleClickedLink('/rooms')} >
+                      Rooms
                   </NavLink>
                   </DropdownItem>
                   <DropdownItem divider />

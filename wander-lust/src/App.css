@@ -17,15 +17,19 @@
     cursor: pointer;
 }
 
-.white-text {
+/* .white-text {
     color: #fff;
     position:absolute;
     bottom: 0;
     height: 2.5rem;
-}
+} */
 
 .white {
-    background-color: #fff;
+    background-color: #ead5c0;
+}
+
+.flex {
+    display: flex;
 }
 /* .App {
 text-align: center;

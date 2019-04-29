@@ -8,6 +8,7 @@ import NavBar from './containers/NavBar'
 import HotelContainer from './containers/HotelContainer'
 import Profile from './components/Profile'
 import Footer from './components/Footer'
+import RoomContainer from './containers/RoomContainer'
 
 
 
@@ -89,6 +90,11 @@ class App extends React.Component {
     this.props.history.push("/");
   }
 
+  handleClick = () => {
+      console.log("clicked")
+  }
+
+
   render() {
     return (
       <div className="homepage">
@@ -102,8 +108,9 @@ class App extends React.Component {
             path="/login"
             render={() => <Login user={this.state.user}  submitHandler={this.loginSubmitHandler} />}
           />
-          <Route path="/profile" render={() => <Profile user={this.state.user} />} />
-          <Route path="/hotels" render={() => <HotelContainer />}/>
+          <Route path="/profile" render={() => <Profile user={this.state.user} handleClick={this.handleClick} />} />
+          <Route path="/hotels" render={() => <HotelContainer user={this.state.user} />}/>
+          <Route path="/rooms" render={() => <RoomContainer user={this.state.user} />}/>
 
           <Route path="/"  />
         </Switch>
