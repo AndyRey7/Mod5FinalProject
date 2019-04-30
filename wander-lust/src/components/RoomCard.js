@@ -30,8 +30,7 @@ const RoomCard = (props) => {
             <div className="content">
             <p>Room type: <strong>{props.room.category}</strong> <br/>Description: {props.room.description}  </p>
             <span>Room avaliable in {props.room.hotel.name}. Located at {props.room.hotel.address}</span>
-
-            <Modal trigger={<Button onClick={()=> props.handleClick(props.room)}>Want to Book this?</Button>}>
+            <Modal trigger={<Button>Want to Book this?</Button>}>
               <Modal.Header>Reservation Form</Modal.Header>
               <Modal.Content image>
                 <Image wrapped size='medium' src={props.room.hotel.image} />

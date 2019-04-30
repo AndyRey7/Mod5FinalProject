@@ -90,8 +90,11 @@ class App extends React.Component {
     this.props.history.push("/");
   }
 
-  handleClick = () => {
-      console.log("clicked")
+  deleteReservation = (reservation) => {
+
+      this.setState({
+          user: {...this.state.user  }
+      })
   }
 
   updateUserRooms = (newRoom) => {
