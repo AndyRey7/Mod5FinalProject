@@ -13,7 +13,7 @@ export default class HotelContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/api/v1/hotels')
+        fetch('http://localhost:3001/api/v1/hotels')
         .then(res => res.json())
         .then(hotelData => {
             this.setState({

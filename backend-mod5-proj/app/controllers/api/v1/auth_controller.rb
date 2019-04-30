@@ -13,7 +13,7 @@ class Api::V1::AuthController < ApplicationController
       # byebug
     user_id = JWT.decode(request.headers["Authorization"], nil, false)[0]["user_id"]
     user = User.find(user_id)
-    render json: { user: user.as_json( except: :password_digest) }
+    render json:  { user: UserSerializer.new(user) }
   end
 
   private

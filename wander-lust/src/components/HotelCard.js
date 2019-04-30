@@ -21,7 +21,10 @@ export default class HotelCard extends React.Component {
                     <section>
                     <strong>Address: </strong> {this.props.hotel.address}
                     <p><strong>Description:</strong> {this.props.hotel.description}</p>
-                    <span><strong>Room info:</strong> supposed to list out the room categories available for the hotel. {this.props.hotel.rooms.category}</span>
+                    <ul><strong>Room Types Available:</strong> </ul>
+                        <li>Standard</li>
+                        <li>Deluxe</li>
+                        <li>Superior</li>
                     </section>
                 </div>
             )
@@ -31,7 +34,7 @@ export default class HotelCard extends React.Component {
 
 
     render() {
-        console.log(this.props.hotel)
+        // console.log(this.props.hotel)
         return (
             <div className="column">
               <div className="ui fluid card">

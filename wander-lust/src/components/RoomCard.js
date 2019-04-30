@@ -1,8 +1,26 @@
 import React from 'react'
 //import ModalEx from './ModalEx'
-import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import { Button, Header, Image, Modal, Form, Input } from 'semantic-ui-react'
 
 const RoomCard = (props) => {
+
+    const addReservation = (e, roomId, userId) => {
+        e.preventDefault()
+        return fetch('http://localhost:3001/api/v1/reservations', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                'Accept': "application/json"
+            },
+            body: JSON.stringify({
+                user_id: userId,
+                room_id: roomId
+            })
+        }).then(res => res.json())
+        .then(parsedR => props.updateUserRooms(parsedR))
+    }
+
+
     return (
         <div className="column">
           <div className="ui fluid card">
@@ -14,13 +32,18 @@ const RoomCard = (props) => {
             <span>Room avaliable in {props.room.hotel.name}. Located at {props.room.hotel.address}</span>
 
             <Modal trigger={<Button onClick={()=> props.handleClick(props.room)}>Want to Book this?</Button>}>
-              <Modal.Header>Select a Photo</Modal.Header>
+              <Modal.Header>Reservation Form</Modal.Header>
               <Modal.Content image>
                 <Image wrapped size='medium' src={props.room.hotel.image} />
                 <Modal.Description>
-                  <Header>Default Profile Image</Header>
-                  <p>We've found the following gravatar image associated with your e-mail address.</p>
-                  <p>Is it okay to use this photo?</p>
+                  <Header>{props.room.hotel.name}</Header>
+                  <p>{props.room.hotel.address}</p>
+                  <Form onSubmit={(e) => addReservation(e, props.room.id, props.user.id) }>
+                      <Input type="hidden" name="userid" value={props.user.id}/>
+                      <Input type="hidden" name="roomid" value={props.room.id}/>
+                      <Image />
+                      <Button className="button" type="submit" >Book this room!</Button>
+                  </Form>
                 </Modal.Description>
               </Modal.Content>
             </Modal>

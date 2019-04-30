@@ -20,7 +20,7 @@ class App extends React.Component {
   componentDidMount = () => {
     let token = localStorage.token;
     token
-      ? fetch("http://localhost:3000/api/v1/current_user", {
+      ? fetch("http://localhost:3001/api/v1/current_user", {
           method: "GET",
           headers: {
             "content-type": "application/json",
@@ -41,7 +41,7 @@ class App extends React.Component {
     };
 
   signupSubmitHandler = (userInfo) => {
-    fetch("http://localhost:3000/api/v1/users", {
+    fetch("http://localhost:3001/api/v1/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +63,7 @@ class App extends React.Component {
   };
 
   loginSubmitHandler = userInfo => {
-    fetch("http://localhost:3000/api/v1/login", {
+    fetch("http://localhost:3001/api/v1/login", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -94,8 +94,15 @@ class App extends React.Component {
       console.log("clicked")
   }
 
+  updateUserRooms = (newRoom) => {
+      this.setState({
+          user: {...this.state.user, rooms: [newRoom, ...this.state.user.rooms] }
+      }, () => this.props.history.push("/profile"))
+  }
+
 
   render() {
+      //console.log(this.state.user)
     return (
       <div className="homepage">
       <NavBar history={ this.props.history} user={this.state.user} handleLogout={this.handleLogout} />
@@ -110,7 +117,7 @@ class App extends React.Component {
           />
           <Route path="/profile" render={() => <Profile user={this.state.user} handleClick={this.handleClick} />} />
           <Route path="/hotels" render={() => <HotelContainer user={this.state.user} />}/>
-          <Route path="/rooms" render={() => <RoomContainer user={this.state.user} />}/>
+          <Route path="/rooms" render={() => <RoomContainer user={this.state.user} updateUserRooms={this.updateUserRooms}  />}/>
 
           <Route path="/"  />
         </Switch>

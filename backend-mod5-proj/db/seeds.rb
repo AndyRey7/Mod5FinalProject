@@ -18,6 +18,14 @@ Room.create(category: "standard", description: Faker::Games::Witcher.unique.quot
 Room.create(category: "deluxe", description:Faker::Games::Witcher.unique.quote, img_URL: "http://portoazzurro.com.mt/wp-content/uploads/2013/11/hotel_room_land_view-556x310.png", hotel_id: 1)
 Room.create(category: "superior", description:Faker::Games::Witcher.unique.quote, img_URL: "https://pix10.agoda.net/hotelImages/10685/-1/186c8531c0296e9b952acf6b7dc160b7.png?s=1024x768", hotel_id: 1)
 
+Room.create(category: "standard", description: Faker::Games::Witcher.unique.quote, img_URL: "https://pix10.agoda.net/hotelImages/433/43322/43322_17041516100052420644.jpg?s=1024x768", hotel_id: 2)
+Room.create(category: "deluxe", description:Faker::Games::Witcher.unique.quote, img_URL: "http://portoazzurro.com.mt/wp-content/uploads/2013/11/hotel_room_land_view-556x310.png", hotel_id: 2)
+Room.create(category: "superior", description:Faker::Games::Witcher.unique.quote, img_URL: "https://pix10.agoda.net/hotelImages/10685/-1/186c8531c0296e9b952acf6b7dc160b7.png?s=1024x768", hotel_id: 2)
+
+Room.create(category: "standard", description: Faker::Games::Witcher.unique.quote, img_URL: "https://pix10.agoda.net/hotelImages/433/43322/43322_17041516100052420644.jpg?s=1024x768", hotel_id: 3)
+Room.create(category: "deluxe", description:Faker::Games::Witcher.unique.quote, img_URL: "http://portoazzurro.com.mt/wp-content/uploads/2013/11/hotel_room_land_view-556x310.png", hotel_id: 3)
+Room.create(category: "superior", description:Faker::Games::Witcher.unique.quote, img_URL: "https://pix10.agoda.net/hotelImages/10685/-1/186c8531c0296e9b952acf6b7dc160b7.png?s=1024x768", hotel_id: 3)
+
 Reservation.create(user_id: 1, room_id: 2)
 Reservation.create(user_id: 1, room_id: 1)
 Reservation.create(user_id: 2, room_id: 3)

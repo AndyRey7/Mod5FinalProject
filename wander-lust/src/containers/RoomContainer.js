@@ -1,5 +1,4 @@
 import React from 'react'
-import Reservation from '../components/Reservation.js'
 import RoomCard from '../components/RoomCard'
 
 export default class RoomContainer extends React.Component {
@@ -10,7 +9,7 @@ export default class RoomContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/api/v1/rooms')
+        fetch('http://localhost:3001/api/v1/rooms')
         .then(res => res.json())
         .then(roomData => {
             this.setState({
@@ -19,14 +18,12 @@ export default class RoomContainer extends React.Component {
         })
     }
     handleClick = (room) => {
-        this.setState({ room }, ()=> console.log(this.state.room))
+        this.setState({ room })
     }
 
     allRooms = () => {
-        return this.state.rooms.map(room => <RoomCard key={room.id} room={room} handleClick={this.handleClick} /> )
+        return this.state.rooms.map(room => <RoomCard key={room.id} updateUserRooms={this.props.updateUserRooms} user={this.props.user} room={room} handleClick={this.handleClick} /> )
     }
-
-
 
     render() {
         return (
@@ -35,7 +32,6 @@ export default class RoomContainer extends React.Component {
                 <div className= "ui three column grid">
                 {this.allRooms()}
                 </div>
-                < Reservation user={this.props.user} handleClick={this.handleClick}   />
             </div>
         )
     }

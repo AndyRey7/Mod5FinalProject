@@ -7,6 +7,8 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show
+        @reservations = Reservation.all
+        @rooms = Room.all
       render json: @user
     end
 
