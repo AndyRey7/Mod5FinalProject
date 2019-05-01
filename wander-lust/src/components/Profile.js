@@ -5,26 +5,29 @@ import { Popup } from 'semantic-ui-react'
 const Profile = (props) => {
 
     const handleDelete = (reservationId) => {
-        // return fetch(`http://localhost:3001/api/v1/reservations/${reservationId}`, {
-        //     method: "DELETE"
-        // }).then(res => res.json()).then(console.log)
-        console.log(reservationId)
+        return fetch(`http://localhost:3001/api/v1/reservations/${reservationId}`, {
+            method: "DELETE"
+        }).then(res => res.json()).then(props.deleteReservation(reservationId))
+
     }
 
 
+
+
+
     const getRoomInfo = () => {
-        return props.user.rooms.map(room => {
+        return props.user.resRooms.map(resRoom => {
             return (
                 <div className="ui right aligned animated list">
                   <div className="item">
-                  <Popup trigger={<img className="ui avatar image" src={room.img_URL} alt="room" />}
-                         content={<img src={room.img_URL} alt="room"/>}
+                  <Popup trigger={<img className="ui avatar image" src={resRoom.room.img_URL} alt="room" />}
+                         content={<img src={resRoom.room.img_URL} alt="room"/>}
                          basic
                   />
                   <div className="content">
-                    <div className="header">Room Type: {room.category}</div>
-                    {room.description}
-                    <button onClick={() => handleDelete(props.user)}>delete this reservation</button>
+                    <div className="header">Room Type: {resRoom.room.category}</div>
+                    {resRoom.room.description}
+                    <button onClick={() => handleDelete(resRoom.reservation.id)}>delete this reservation</button>
                   </div>
                   </div>
                 </div>

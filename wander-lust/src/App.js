@@ -90,11 +90,11 @@ class App extends React.Component {
     this.props.history.push("/");
   }
 
-  deleteReservation = (reservation) => {
-
-      this.setState({
-          user: {...this.state.user  }
-      })
+  deleteReservation = (reservationId) => {
+      const user = {...this.state.user}
+      user.resRooms = user.resRooms.filter(resRoom => resRoom.reservation.id !== reservationId)
+      if(window.confirm("You sure brah?")) {this.setState({ user })}
+      // this.setState({ user })
   }
 
   updateUserRooms = (newRoom) => {
@@ -118,7 +118,7 @@ class App extends React.Component {
             path="/login"
             render={() => <Login user={this.state.user}  submitHandler={this.loginSubmitHandler} />}
           />
-          <Route path="/profile" render={() => <Profile user={this.state.user} handleClick={this.handleClick} />} />
+          <Route path="/profile" render={() => <Profile user={this.state.user} handleClick={this.handleClick} deleteReservation={this.deleteReservation} />} />
           <Route path="/hotels" render={() => <HotelContainer user={this.state.user} />}/>
           <Route path="/rooms" render={() => <RoomContainer user={this.state.user} updateUserRooms={this.updateUserRooms}  />}/>
 

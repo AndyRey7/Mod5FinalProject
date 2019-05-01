@@ -12,7 +12,6 @@ export default class HotelCard extends React.Component {
         })
     }
 
-
     moreInfo = () => {
         if (this.state.clicked === true) {
             //const room = this.props.hotel.rooms.map(r => r.category)
@@ -30,8 +29,6 @@ export default class HotelCard extends React.Component {
             )
         }
     }
-
-
 
     render() {
         // console.log(this.props.hotel)

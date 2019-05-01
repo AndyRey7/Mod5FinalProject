@@ -28,7 +28,7 @@ export default class NavBar extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  handleClick = () =>{
+  handleClick = () => {
     if (window.confirm("Are you sure you want log out?")) {
       this.props.handleLogout();
     }

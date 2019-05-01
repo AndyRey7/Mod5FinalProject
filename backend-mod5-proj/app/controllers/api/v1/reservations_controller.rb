@@ -27,7 +27,7 @@ class Api::V1::ReservationsController < ApplicationController
       end
     end
 
-    def delete
+    def destroy
       @reservation.destroy
       render json: @reservation, status: :ok
     end
