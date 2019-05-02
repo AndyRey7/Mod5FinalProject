@@ -14,7 +14,7 @@ To get you going, I've got a backend with hotels waiting to be booked!  To get g
 
 ##Screenshot
 
-![Image of Homepage](Screen-Shot-2019-05-02-at-11.15.54-AM.gif)
+![Image of Homepage](file://localhost/private/var/folders/dz/fcqhd41j7931fpxc4944p2dw0000gn/T/TemporaryItems/SaveForWeb/BrowserPreview/BrowserPreview_tmp.html)
 
 ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
