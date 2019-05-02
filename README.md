@@ -13,7 +13,7 @@ To get you going, I've got a backend with hotels waiting to be booked!  To get g
 
 1. In your terminal run `npm install` or `yarn install` to install dependencies.
 2. Navigate to `backend-mod-5-proj` and run `rails s` from your terminal to get the backend up and running.
-3. Navigate to `wander-lust` and run npm start or yarn start to get the front-end working
+3. Navigate to `wander-lust` and run `npm start` or `yarn start` to get the front-end working
 
 
 ## Features
@@ -27,7 +27,7 @@ To get you going, I've got a backend with hotels waiting to be booked!  To get g
 
 ## Screenshot
 
-![Image of Homepage](/Users/User/Development/mod-4/Mod5FinalProject/screenshot/homepage.png)
+![Image of Homepage](./screenshot/homepage.png)
 
 
 ## Made Using:
