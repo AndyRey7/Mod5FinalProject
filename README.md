@@ -12,7 +12,7 @@ To get you going, I've got a backend with hotels waiting to be booked!  To get g
 3. Navigate to `wander-lust` and run npm start or yarn start to get the front-end working
 
 
-##Screenshot
+## Screenshot
 
 ![Image of Homepage](file://localhost/private/var/folders/dz/fcqhd41j7931fpxc4944p2dw0000gn/T/TemporaryItems/SaveForWeb/BrowserPreview/BrowserPreview_tmp.html)
 
