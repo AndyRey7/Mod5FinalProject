@@ -14,7 +14,7 @@ To get you going, I've got a backend with hotels waiting to be booked!  To get g
 
 ## Screenshot
 
-![Image of Homepage](/Users/User/Development/mod-4/Mod5FinalProject/screenshot/Screen Shot 2019-05-02 at 11.15.54 AM.png)
+![Image of Homepage](/Users/User/Development/mod-4/Mod5FinalProject/screenshot/homepage.png)
 
 ```
 Give the example
