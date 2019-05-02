@@ -16,41 +16,23 @@ To get you going, I've got a backend with hotels waiting to be booked!  To get g
 3. Navigate to `wander-lust` and run npm start or yarn start to get the front-end working
 
 
+## Features
+
+* User can sign-up or login and view their profile page
+* User can view a list of Hotels and types of rooms in that hotel
+* User can make a reservation to a room from a hotel
+* User can remove a reservation from their profile page
+* User can delete their account
+
+
 ## Screenshot
 
 ![Image of Homepage](/Users/User/Development/mod-4/Mod5FinalProject/screenshot/homepage.png)
 
 
+## Made Using:
 
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* React
+* Ruby on Rails API
+* Google Maps API
+* Styling with ReactStrap, Semantic UI React, CSS
