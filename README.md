@@ -1,25 +1,21 @@
 # WanderLust - A place for travel bugs
 
 
-One Paragraph of project description goes here
+ A website where the user can select from a list of hotels available and choose what kind of room to book from that hotel. Then they can view their profile to edit or delete their reservations. Also, they can look for places to eat around where they are staying. All of these feature are provided only if a user is logged in or they can sign-up. Enjoy!
 
-## Getting Started
+## Setup
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To get you going, I've got a backend with hotels waiting to be booked!  To get get these guys, you're going to have to do the follow:
 
-### Prerequisites
+1. In your terminal run `npm install` or `yarn install` to install dependencies.
+2. Navigate to `backend-mod-5-proj` and run `rails s` from your terminal to get the backend up and running.
+3. Navigate to `wander-lust` and run npm start or yarn start to get the front-end working
 
-What things you need to install the software and how to install them
 
-```
-Give examples
-```
+##Screenshot
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+![Image of Homepage]
+(Screen Shot 2019-05-02 at 11.15.54 AM)
 
 ```
 Give the example
