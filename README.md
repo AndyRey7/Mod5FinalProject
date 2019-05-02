@@ -4,8 +4,8 @@
 
 * **Andy Reyes** - [AndyRey7](https://github.com/AndyRey7)
 
-
- A website where the user can select from a list of hotels available and choose what kind of room to book from that hotel. Then they can view their profile to edit or delete their reservations. Also, they can look for places to eat around where they are staying. All of these feature are provided only if a user is logged in or they can sign-up. Enjoy!
+## About
+A website where the user can select from a list of hotels available and choose what kind of room to book from that hotel. Then they can view their profile to edit or delete their reservations. Also, they can look for places to eat around where they are staying. All of these feature are provided only if a user is logged in or they can sign-up. Enjoy!
 
 ## Setup
 
