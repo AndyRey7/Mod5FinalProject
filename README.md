@@ -9,7 +9,7 @@
 
 ## Setup
 
-To get you going, I've got a backend with hotels waiting to be booked!  To get get these guys, you're going to have to do the follow:
+To get you going, I've got a back-end with hotels waiting to be booked! To get to these hotels, you're going to have to do the following:
 
 1. In your terminal run `npm install` or `yarn install` to install dependencies.
 2. Navigate to `backend-mod-5-proj` and run `rails s` from your terminal to get the backend up and running.
