@@ -17,6 +17,12 @@ class UserSerializer < ActiveModel::Serializer
                 category: reservation.room.category,
                 description: reservation.room.description,
                 img_URL: reservation.room.img_URL
+            },
+            hotel: {
+                id: reservation.room.hotel.id,
+                name: reservation.room.hotel.name,
+                address: reservation.room.hotel.address,
+                image: reservation.room.hotel.image
             }
           }
       end

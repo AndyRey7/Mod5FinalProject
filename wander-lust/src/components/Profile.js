@@ -1,5 +1,5 @@
 import React from 'react'
-import { Popup } from 'semantic-ui-react'
+import { Popup, Button, ButtonGroup } from 'semantic-ui-react'
 
 
 const Profile = (props) => {
@@ -11,37 +11,38 @@ const Profile = (props) => {
 
     }
 
-
-
-
-
     const getRoomInfo = () => {
+        let style = {
+            paddingBottom: '20px'
+        }
         return props.user.resRooms.map(resRoom => {
             return (
                 <div className="ui right aligned animated list">
-                  <div className="item">
-                  <Popup trigger={<img className="ui avatar image" src={resRoom.room.img_URL} alt="room" />}
-                         content={<img src={resRoom.room.img_URL} alt="room"/>}
-                         basic
-                  />
-                  <div className="content">
-                    <div className="header">Room Type: {resRoom.room.category}</div>
-                    {resRoom.room.description}
-                    <button onClick={() => handleDelete(resRoom.reservation.id)}>delete this reservation</button>
-                  </div>
-                  </div>
+                    <div className="item" style={style}>
+                      <Popup trigger={<img className="ui avatar image" src={resRoom.hotel.image} alt="room" />}
+                             content={<img src={resRoom.hotel.image} alt="room"/>}
+                             basic
+                       />
+                        <div className="content">
+                            <div className="header"> {resRoom.hotel.name}</div>
+                             <p>Room you booked: {resRoom.room.category}</p>
+                             <ButtonGroup className="mr-2">
+                             <Button size="sm" >Check out nearby places!</Button>
+                             <Button size="sm" onClick={() => handleDelete(resRoom.reservation.id)}>delete this reservation</Button>
+                             </ButtonGroup>
+                        </div>
+                    </div>
                 </div>
             )
         })
     }
-
     return (
         <div className="white">
            <h1>Welcome to your profile {props.user.name}</h1>
            <br/>
            <br/>
-           <br/>
             <div>
+                <strong>Here is a list of your rersevations, pal</strong>
                 {props.user.rooms && getRoomInfo()}
             </div>
         </div>

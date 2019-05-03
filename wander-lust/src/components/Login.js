@@ -18,7 +18,7 @@ class Login extends React.Component {
     }
 
     render() {
-        let style={
+        let style = {
             paddingTop: '23px'
         }
         return (

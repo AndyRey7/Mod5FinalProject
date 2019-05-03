@@ -20,6 +20,13 @@ const RoomCard = (props) => {
         .then(parsedR => props.updateUserRooms(parsedR))
     }
 
+    let modalStyle = {
+        height: '60%',
+        position: 'absolute',
+        top: '25%',
+        left: '20%'
+    }
+
 
     return (
         <div className="column">
@@ -30,10 +37,10 @@ const RoomCard = (props) => {
             <div className="content">
             <p>Room type: <strong>{props.room.category}</strong> <br/>Description: {props.room.description}  </p>
             <span>Room avaliable in {props.room.hotel.name}. Located at {props.room.hotel.address}</span>
-            <Modal trigger={<Button>Want to Book this?</Button>}>
-              <Modal.Header>Reservation Form</Modal.Header>
+            <Modal style={modalStyle}  trigger={<Button>Want to Book this?</Button>}>
+              <Modal.Header className="centerText"><h1>Reservation Form</h1></Modal.Header>
               <Modal.Content image>
-                <Image wrapped size='medium' src={props.room.hotel.image} />
+                <Image  src={props.room.hotel.image} />
                 <Modal.Description>
                   <Header>{props.room.hotel.name}</Header>
                   <p>{props.room.hotel.address}</p>
@@ -41,7 +48,7 @@ const RoomCard = (props) => {
                       <Input type="hidden" name="userid" value={props.user.id}/>
                       <Input type="hidden" name="roomid" value={props.room.id}/>
                       <Image />
-                      <Button className="button" type="submit" >Book this room!</Button>
+                      <Button className="button" type="submit">Book this room!</Button>
                   </Form>
                 </Modal.Description>
               </Modal.Content>

@@ -17,6 +17,11 @@
     cursor: pointer;
 }
 
+.centerText {
+    
+    text-align: center;
+}
+
 /* .white-text {
     color: #fff;
     position:absolute;
