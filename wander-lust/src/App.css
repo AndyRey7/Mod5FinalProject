@@ -18,7 +18,7 @@
 }
 
 .centerText {
-    
+
     text-align: center;
 }
 
@@ -33,9 +33,13 @@
     background-color: #ead5c0;
 }
 
-.flex {
-    display: flex;
+.btn {
+    
+    border-radius: 45px;
+    box-shadow: 3px 3px 3px 3px #ccc;
 }
+
+
 /* .App {
 text-align: center;
 } */

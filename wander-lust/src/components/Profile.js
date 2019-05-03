@@ -1,5 +1,5 @@
 import React from 'react'
-import { Popup, Button, ButtonGroup } from 'semantic-ui-react'
+import { Popup } from 'semantic-ui-react'
 
 
 const Profile = (props) => {
@@ -15,6 +15,10 @@ const Profile = (props) => {
         let style = {
             paddingBottom: '20px'
         }
+        let buttonStyle = {
+            background: '#35687d',
+            color: '#ccc'
+        }
         return props.user.resRooms.map(resRoom => {
             return (
                 <div className="ui right aligned animated list">
@@ -26,10 +30,10 @@ const Profile = (props) => {
                         <div className="content">
                             <div className="header"> {resRoom.hotel.name}</div>
                              <p>Room you booked: {resRoom.room.category}</p>
-                             <ButtonGroup className="mr-2">
-                             <Button size="sm" >Check out nearby places!</Button>
-                             <Button size="sm" onClick={() => handleDelete(resRoom.reservation.id)}>delete this reservation</Button>
-                             </ButtonGroup>
+
+                             <button style={buttonStyle} className="tiny ui button" size="sm" >Check out nearby places!</button>
+                             <button style={buttonStyle} className="tiny ui button" size="sm" onClick={() => handleDelete(resRoom.reservation.id)}>delete this reservation</button>
+
                         </div>
                     </div>
                 </div>

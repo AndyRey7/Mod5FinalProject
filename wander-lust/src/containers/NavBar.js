@@ -41,7 +41,7 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar  color="dark" light expand="md">
+        <Navbar style={{backgroundColor: '#35687d', color:'#ccc'}}   light expand="md">
           <NavbarBrand className="link" onClick={() => this.handleClickedLink('/')} >
               <span className="nav-titles">WanderLust<i className="paper plane icon"></i></span>
           </NavbarBrand>
@@ -74,7 +74,7 @@ export default class NavBar extends React.Component {
                   </NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem style={{backgroundColor: 'cyan', color:'white'}}  >
+                  <DropdownItem style={{backgroundColor: '#35687d', color:'#ccc'}}  >
                     <NavItem onClick={this.handleClick}>
                       Log Out
                     </NavItem>

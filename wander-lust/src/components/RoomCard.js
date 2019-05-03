@@ -27,6 +27,11 @@ const RoomCard = (props) => {
         left: '20%'
     }
 
+    let buttonStyle = {
+        borderRadius: '45px',
+        boxShadow: '3px 3px 3px 3px #ccc'
+    }
+
 
     return (
         <div className="column">
@@ -37,7 +42,9 @@ const RoomCard = (props) => {
             <div className="content">
             <p>Room type: <strong>{props.room.category}</strong> <br/>Description: {props.room.description}  </p>
             <span>Room avaliable in {props.room.hotel.name}. Located at {props.room.hotel.address}</span>
-            <Modal style={modalStyle}  trigger={<Button>Want to Book this?</Button>}>
+            <br/>
+            <br/>
+            <Modal style={modalStyle}  trigger={<button style={buttonStyle}>Want to Book this?</button>}>
               <Modal.Header className="centerText"><h1>Reservation Form</h1></Modal.Header>
               <Modal.Content image>
                 <Image  src={props.room.hotel.image} />
@@ -48,7 +55,7 @@ const RoomCard = (props) => {
                       <Input type="hidden" name="userid" value={props.user.id}/>
                       <Input type="hidden" name="roomid" value={props.room.id}/>
                       <Image />
-                      <Button className="button" type="submit">Book this room!</Button>
+                      <Button type="submit">Book this room!</Button>
                   </Form>
                 </Modal.Description>
               </Modal.Content>

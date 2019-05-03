@@ -22,7 +22,9 @@ class UserSerializer < ActiveModel::Serializer
                 id: reservation.room.hotel.id,
                 name: reservation.room.hotel.name,
                 address: reservation.room.hotel.address,
-                image: reservation.room.hotel.image
+                image: reservation.room.hotel.image,
+                lat: reservation.room.hotel.lat,
+                lng: reservation.room.hotel.lng
             }
           }
       end
