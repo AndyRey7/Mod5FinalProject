@@ -2,7 +2,9 @@
 /* img {
  -webkit-filter: blur(10px);
 } */
-
+* {
+    font-family: 'Rock Salt', cursive;
+}
 .homepage {
   background-image: url("https://i.pinimg.com/originals/62/e1/36/62e136c84376460c69767361708674f7.jpg");
   background-position: center;
@@ -11,6 +13,7 @@
   background-size: cover;
   width: 100%;
   min-height: 100vh;
+
 }
 .nav-titles {
     color: #aaa;
@@ -20,13 +23,6 @@
 .centerText {
     text-align: center;
 }
-
-/* .white-text {
-    color: #fff;
-    position:absolute;
-    bottom: 0;
-    height: 2.5rem;
-} */
 
 .sepia {
     background-color: #ead5c0;
@@ -73,8 +69,17 @@
 .ant-slider-track {
   background-color: #ead5c0 !important;
 }
+/* navbar icons ---------------------------------------------*/
+#icons {
+    padding-left: 25px;
+    font-size: 25px;
+}
 
-
+#signout {
+    padding-left: 35px;
+    font-size: 25px;
+}
+/* ---------------------------------------------------------*/
 
 /* profile styling---------------------------------------- */
 #padding {

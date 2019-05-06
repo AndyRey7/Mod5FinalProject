@@ -1,10 +1,10 @@
 import React from 'react'
-import { Popup } from 'semantic-ui-react'
+import { Popup, Modal } from 'semantic-ui-react'
 import MapsContainer from '../containers/MapsContainer'
 import '../App.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import 'antd/dist/antd.css';
-import {  Modal } from 'semantic-ui-react'
+
 
 
 
@@ -38,9 +38,9 @@ class Profile extends React.Component {
 
         return this.props.user.resRooms.map(resRoom => {
             return (
-                <div className="ui right aligned animated list">
+                <div key={resRoom.hotel.id} className="ui right aligned animated list">
                     <div className="item" id="padding">
-                        <Popup trigger={<img className="ui avatar image" src={resRoom.hotel.image} alt="room" />}
+                        <Popup trigger={<img className="ui avatar image"  src={resRoom.hotel.image} alt="hotel" />}
                         content={<img src={resRoom.hotel.image} alt="room"/>}
                         basic
                         />
@@ -48,9 +48,8 @@ class Profile extends React.Component {
                         <div className="header"> {resRoom.hotel.name}</div>
                             <p>Room Type: {resRoom.room.category}</p>
                             <Modal style={modalStyle} trigger={<button id="buttonColor" className="tiny ui button" size="sm" onClick={() => this.addHotel(resRoom.hotel)}>Check out nearby places!!!!</button>} >
-
-                                    <MapsContainer hotel={this.state.hotel} />
-                                </Modal>
+                                <MapsContainer hotel={this.state.hotel} />
+                            </Modal>
                             <button id="buttonColor" className="tiny ui button" size="sm" onClick={() => this.handleDelete(resRoom.reservation.id)}>delete this reservation</button>
                         </div>
                     </div>

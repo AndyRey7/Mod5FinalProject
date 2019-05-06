@@ -1,5 +1,5 @@
 import React from 'react'
-//import ModalEx from './ModalEx'
+
 import '../App.css'
 import { Button, Header, Image, Modal, Form, Input } from 'semantic-ui-react'
 

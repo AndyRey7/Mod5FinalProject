@@ -92,8 +92,7 @@ class App extends React.Component {
   deleteReservation = (reservationId) => {
       const user = {...this.state.user}
       user.resRooms = user.resRooms.filter(resRoom => resRoom.reservation.id !== reservationId)
-      if(window.confirm("You sure brah?")) {this.setState({ user })}
-      // this.setState({ user })
+      if(window.confirm("Are you sure you want to delete this reservation?")) {this.setState({ user })}
   }
 
   updateUserRooms = (newRoom) => {
