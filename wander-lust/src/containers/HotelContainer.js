@@ -32,7 +32,7 @@ export default class HotelContainer extends React.Component {
 
     render() {
         return (
-            <div className= "white">
+            <div className= "sepia">
                 <h1>Hotels!</h1>
                 <div className="ui four column grid">
                 {this.allHotels()}

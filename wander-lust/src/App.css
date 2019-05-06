@@ -28,12 +28,11 @@
     height: 2.5rem;
 } */
 
-.white {
+.sepia {
     background-color: #ead5c0;
 }
 
 .btn {
-
     border-radius: 45px;
     box-shadow: 3px 3px 3px 3px #ccc;
 }
@@ -58,23 +57,35 @@
 }
 
 .card-title {
-  color: #ee8301;
+  color: #35687d;
 }
 
 /* ANTD Overwrites */
 .ant-btn-primary {
-  background-color: #ee8301 !important;
-  border-color: #ee8301 !important;
+  background-color: #35687d !important;
+  border-color: #ccc !important;
 }
 
 .ant-slider-handle {
-  border-color: #ee8301 !important;
+  border-color: #35687d !important;
 }
 
 .ant-slider-track {
-  background-color: #282c34 !important;
+  background-color: #ead5c0 !important;
 }
 
+
+
+/* profile styling---------------------------------------- */
+#padding {
+    padding-bottom: 20px;
+}
+
+#buttonColor {
+    background: #35687d;
+    color: #ccc;
+}
+/*-----------------------------------------------------*/
 
 /* .App {
 text-align: center;

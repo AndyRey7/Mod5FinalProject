@@ -31,7 +31,7 @@ export default class HotelCard extends React.Component {
     }
 
     render() {
-        // console.log(this.props.hotel)
+        
         return (
             <div className="column">
               <div className="ui fluid card">

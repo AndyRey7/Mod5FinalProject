@@ -27,8 +27,8 @@ export default class RoomContainer extends React.Component {
 
     render() {
         return (
-            <div className="white">
-                <h3>Rooms</h3>
+            <div className="sepia">
+                <h3 style={{textAlign: 'center'}}>Rooms</h3>
                 <div className= "ui three column grid">
                 {this.allRooms()}
                 </div>

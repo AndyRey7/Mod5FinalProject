@@ -1,5 +1,6 @@
 import React from 'react'
 //import ModalEx from './ModalEx'
+import '../App.css'
 import { Button, Header, Image, Modal, Form, Input } from 'semantic-ui-react'
 
 const RoomCard = (props) => {
@@ -27,12 +28,6 @@ const RoomCard = (props) => {
         left: '20%'
     }
 
-    let buttonStyle = {
-        borderRadius: '45px',
-        boxShadow: '3px 3px 3px 3px #ccc'
-    }
-
-
     return (
         <div className="column">
           <div className="ui fluid card">
@@ -44,7 +39,7 @@ const RoomCard = (props) => {
             <span>Room avaliable in {props.room.hotel.name}. Located at {props.room.hotel.address}</span>
             <br/>
             <br/>
-            <Modal style={modalStyle}  trigger={<button style={buttonStyle}>Want to Book this?</button>}>
+            <Modal style={modalStyle}  trigger={<button className="btn">Want to Book this?</button>}>
               <Modal.Header className="centerText"><h1>Reservation Form</h1></Modal.Header>
               <Modal.Content image>
                 <Image  src={props.room.hotel.image} />

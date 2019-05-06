@@ -75,7 +75,7 @@ class MapsContainer extends Component {
       mapsLoaded: true,
       map,
       mapsApi,
-      locationLatLng: new mapsApi.LatLng(SG_COOR.lat, SG_COOR.lng),
+      locationLatLng: new mapsApi.LatLng(this.props.hotel.lat, this.props.hotel.lng),
       autoCompleteService: new mapsApi.places.AutocompleteService(),
       placesService: new mapsApi.places.PlacesService(map),
       geoCoderService: new mapsApi.Geocoder(),
@@ -104,12 +104,12 @@ class MapsContainer extends Component {
 
     // First, search for restaurants
     placesService.textSearch(placesRequest, ((response) => {
-      // Only look at the nearest top 5.
-      const responseLimit = Math.min(5, response.length);
+      // Only look at the nearest top 6.
+      const responseLimit = Math.min(6, response.length);
       for (let i = 0; i < responseLimit; i++) {
         const hotelPlace = response[i];
         const { rating, name } = hotelPlace;
-        const address = hotelPlace.formatted_address; // e.g 80 mandai Lake Rd,
+        const address = hotelPlace.formatted_address; // e.g 1633 Broadway Rd..,
         const priceLevel = hotelPlace.price_level; // 1, 2, 3...
         let photoUrl = '';
         let openNow = false;
@@ -152,11 +152,13 @@ class MapsContainer extends Component {
   });
 
   render() {
+
     const { constraints, mapsLoaded, locationLatLng, markers, searchResults } = this.state;
     const { autoCompleteService, geoCoderService } = this.state; // Google Maps Services
     return (
       <div className="w-100 d-flex py-4 flex-wrap justify-content-center">
-        <h1 className="w-100 fw-md">Find Some Reseturants Around Your Hotel</h1>
+        <h1 className="">Find Some Restaurants Around {this.props.hotel.name}</h1>
+        <h2>Address of hotel for reference({this.props.hotel.address})</h2>
         {/* Constraints section */}
         <section className="col-4">
           {mapsLoaded ?
@@ -166,7 +168,7 @@ class MapsContainer extends Component {
                 return (
                   <div key={key} className="mb-4">
                     <div className="d-flex mb-2">
-                      <Input className="col-4 mr-2" placeholder="Name" onChange={(event) => this.updateConstraintName(event, key)} />
+                      <Input className="col-4 mr-2" placeholder="Food"  onChange={(event) => this.updateConstraintName(event, key)} />
                       <MapAutoComplete
                         autoCompleteService={autoCompleteService}
                         geoCoderService={geoCoderService}
@@ -194,7 +196,7 @@ class MapsContainer extends Component {
         <section className="col-8 h-lg">
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: 'AIzaSyACICTQnHpC3uoP3Ah1GdW5MW9LntQt-Ps',
+              key: /*'GoogleMapsAPI Key Goes Here' */'', 
               libraries: ['places', 'directions']
             }}
             defaultZoom={11}

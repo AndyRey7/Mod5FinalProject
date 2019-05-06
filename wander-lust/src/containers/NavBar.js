@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import { Link, Redirect} from "react-router-dom";
+
 
 import {
   Collapse,
@@ -41,8 +41,8 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar style={{backgroundColor: '#35687d', color:'#ccc'}}   light expand="md">
-          <NavbarBrand className="link" onClick={() => this.handleClickedLink('/')} >
+        <Navbar style={{backgroundColor: '#35687d', color:'#ccc'}} light expand="md">
+          <NavbarBrand onClick={() => this.handleClickedLink('/')} >
               <span className="nav-titles">WanderLust<i className="paper plane icon"></i></span>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
@@ -52,29 +52,29 @@ export default class NavBar extends React.Component {
               <>
 
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle className="link" nav caret>
+                <DropdownToggle nav caret>
                   <span className="nav-titles">{this.props.user.name}</span>
                 </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem  className="link">
-                  <NavLink onClick={() => this.handleClickedLink('/hotels')} >
+                <DropdownMenu right style={{backgroundColor: '#ead5c0'}}>
+                  <DropdownItem  >
+                  <NavLink onClick={() => this.handleClickedLink('/hotels')}>
                       Hotels
                   </NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem  className="link"  >
-                  <NavLink onClick={() => this.handleClickedLink('/rooms')} >
+                  <DropdownItem>
+                  <NavLink onClick={() => this.handleClickedLink('/rooms')}>
                       Rooms
                   </NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem  className="link"  >
-                  <NavLink onClick={() => this.handleClickedLink('/profile')} >
+                  <DropdownItem>
+                  <NavLink onClick={() => this.handleClickedLink('/profile')}>
                       Your Profile
                   </NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem style={{backgroundColor: '#35687d', color:'#ccc'}}  >
+                  <DropdownItem style={{backgroundColor: '#35687d', color:'#ccc'}}>
                     <NavItem onClick={this.handleClick}>
                       Log Out
                     </NavItem>
@@ -84,13 +84,13 @@ export default class NavBar extends React.Component {
               </>
               :
               <>
-                <NavItem onClick={() => this.handleClickedLink('/login')} >
-                  <NavLink className="link" >
+                <NavItem onClick={() => this.handleClickedLink('/login')}>
+                  <NavLink>
                       <span className="nav-titles">Log In</span>
                   </NavLink>
                 </NavItem>
-                <NavItem onClick={() => this.handleClickedLink('/signup')} >
-                  <NavLink className="link" >
+                <NavItem onClick={() => this.handleClickedLink('/signup')}>
+                  <NavLink>
                       <span className="nav-titles">Sign Up</span>
                   </NavLink>
                 </NavItem>

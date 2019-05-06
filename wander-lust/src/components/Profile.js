@@ -1,14 +1,22 @@
 import React from 'react'
 import { Popup } from 'semantic-ui-react'
 import MapsContainer from '../containers/MapsContainer'
-
 import '../App.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import 'antd/dist/antd.css';
+import {  Modal } from 'semantic-ui-react'
 
 
 
 class Profile extends React.Component {
+
+    state = {
+        hotel: {}
+    }
+
+    addHotel = (hotel) => {
+        this.setState({ hotel })
+    }
 
     handleDelete = (reservationId) => {
         return fetch(`http://localhost:3001/api/v1/reservations/${reservationId}`, {
@@ -18,27 +26,32 @@ class Profile extends React.Component {
     }
 
     getRoomInfo = () => {
-        let style = {
-            paddingBottom: '20px'
+
+        let modalStyle = {
+            overflowY: 'auto',
+            height: '60%',
+            position: 'absolute',
+            width: '70%',
+            top: '15%',
+            left: '10%'
         }
-        let buttonStyle = {
-            background: '#35687d',
-            color: '#ccc'
-        }
+
         return this.props.user.resRooms.map(resRoom => {
             return (
                 <div className="ui right aligned animated list">
-                    <div className="item" style={style}>
+                    <div className="item" id="padding">
                         <Popup trigger={<img className="ui avatar image" src={resRoom.hotel.image} alt="room" />}
                         content={<img src={resRoom.hotel.image} alt="room"/>}
                         basic
                         />
                         <div className="content">
                         <div className="header"> {resRoom.hotel.name}</div>
-                            <p>Room you booked: {resRoom.room.category}</p>
+                            <p>Room Type: {resRoom.room.category}</p>
+                            <Modal style={modalStyle} trigger={<button id="buttonColor" className="tiny ui button" size="sm" onClick={() => this.addHotel(resRoom.hotel)}>Check out nearby places!!!!</button>} >
 
-                            <button style={buttonStyle} className="tiny ui button" size="sm" >Check out nearby places!</button>
-                            <button style={buttonStyle} className="tiny ui button" size="sm" onClick={() => this.handleDelete(resRoom.reservation.id)}>delete this reservation</button>
+                                    <MapsContainer hotel={this.state.hotel} />
+                                </Modal>
+                            <button id="buttonColor" className="tiny ui button" size="sm" onClick={() => this.handleDelete(resRoom.reservation.id)}>delete this reservation</button>
                         </div>
                     </div>
                 </div>
@@ -48,7 +61,7 @@ class Profile extends React.Component {
 
     render() {
         return (
-            <div className="white">
+            <div className="sepia">
                <h1>Welcome to your profile {this.props.user.name}</h1>
                <br/>
                <br/>
@@ -56,7 +69,7 @@ class Profile extends React.Component {
                     <strong>Here is a list of your rersevations, pal</strong>
                     {this.props.user.rooms && this.getRoomInfo()}
                 </div>
-                <MapsContainer/>
+
             </div>
         )
     }
