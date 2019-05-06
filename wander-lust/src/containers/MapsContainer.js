@@ -194,7 +194,7 @@ class MapsContainer extends Component {
         <section className="col-8 h-lg">
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: 'AIzaSyACICTQnHpC3uoP3Ah1GdW5MW9LntQt-Ps',
+              key: /*GoogleMapsAPI Key Goes Here! */,
               libraries: ['places', 'directions']
             }}
             defaultZoom={11}
