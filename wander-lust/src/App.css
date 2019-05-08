@@ -2,9 +2,9 @@
 /* img {
  -webkit-filter: blur(10px);
 } */
-* {
-    font-family: 'Rock Salt', cursive;
-}
+/* * {
+    font-family: 'Overlock', cursive;
+} */
 .homepage {
   background-image: url("https://i.pinimg.com/originals/62/e1/36/62e136c84376460c69767361708674f7.jpg");
   background-position: center;
@@ -18,19 +18,24 @@
 .nav-titles {
     color: #aaa;
     cursor: pointer;
+    font-family: 'Rock Salt', cursive;
 }
 
 .centerText {
     text-align: center;
+    font-family: 'Overlock', cursive;
 }
 
 .sepia {
     background-color: #ead5c0;
+    font-family: 'Overlock', cursive;
+
 }
 
 .btn {
     border-radius: 45px;
     box-shadow: 3px 3px 3px 3px #ccc;
+    font-family: 'Overlock', cursive;
 }
 
 .fw-md {
@@ -69,6 +74,8 @@
 .ant-slider-track {
   background-color: #ead5c0 !important;
 }
+
+
 /* navbar icons ---------------------------------------------*/
 #icons {
     padding-left: 25px;
@@ -79,7 +86,11 @@
     padding-left: 35px;
     font-size: 25px;
 }
-/* ---------------------------------------------------------*/
+
+/* navbar font---------------------------------------------------------*/
+.navFont {
+    font-family: 'Rock Salt', cursive;
+}
 
 /* profile styling---------------------------------------- */
 #padding {
@@ -89,6 +100,7 @@
 #buttonColor {
     background: #35687d;
     color: #ccc;
+    font-family: 'Overlock', cursive;
 }
 /*-----------------------------------------------------*/
 
@@ -116,6 +128,22 @@ text-align: center;
 .App-link {
   color: #61dafb;
 } */
+.globalFont {
+    font-family: 'Overlock', cursive ;
+}
+
+ul > li {
+    text-decoration: none;
+
+    padding-left: 27px;
+}
+
+#fitImage {
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   height: 300px;
+}
 
 @keyframes App-logo-spin {
   from {

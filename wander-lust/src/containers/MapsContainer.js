@@ -4,10 +4,9 @@ import MapAutoComplete from '../components/MapAutoComplete';
 import MapMarker from '../components/MapMarker';
 import PlaceCard from '../components/PlaceCard';
 import DistanceSlider from '../components/DistanceSlider';
+import '../App.css'
 
 import { Button, Input, Divider, message } from 'antd';
-
-const SG_COOR = { lat: 41.3987, lng: 2.1394 };
 
 class MapsContainer extends Component {
 
@@ -157,7 +156,7 @@ class MapsContainer extends Component {
     const { autoCompleteService, geoCoderService } = this.state; // Google Maps Services
     return (
       <div className="w-100 d-flex py-4 flex-wrap justify-content-center">
-        <h1 className="">Find Some Restaurants Around {this.props.hotel.name}</h1>
+        <h1 className="globalFont">Find Some Restaurants Around {this.props.hotel.name}</h1>
         <h2>Address of hotel for reference({this.props.hotel.address})</h2>
         {/* Constraints section */}
         <section className="col-4">
@@ -194,14 +193,15 @@ class MapsContainer extends Component {
 
         {/* Maps Section */}
         <section className="col-8 h-lg">
+
           <GoogleMapReact
             bootstrapURLKeys={{
 
-              key: /*'GoogleMapsAPI Key Goes Here' */'',
+              key: /*'GoogleMapsAPI Key Goes Here' */'AIzaSyACICTQnHpC3uoP3Ah1GdW5MW9LntQt-Ps',
               libraries: ['places', 'directions']
             }}
             defaultZoom={11}
-            defaultCenter={{ lat: SG_COOR.lat, lng: SG_COOR.lng }}
+            defaultCenter={{ lat: parseFloat(this.props.hotel.lat), lng: parseFloat(this.props.hotel.lng) }}
             yesIWantToUseGoogleMapApiInternals={true}
             onGoogleApiLoaded={({ map, maps }) => this.apiHasLoaded(map, maps)} // "maps" is the mapApi.
           >

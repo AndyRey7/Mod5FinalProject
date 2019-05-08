@@ -46,6 +46,7 @@ class MapAutoComplete extends Component {
   render() {
     const { dataSource } = this.state;
     return (
+        <div style={{paddingLeft: '15px'}}>
       <AutoComplete
         className="w-100"
         dataSource={dataSource}
@@ -53,6 +54,7 @@ class MapAutoComplete extends Component {
         onSearch={this.handleSearch}
         placeholder="Address"
       />
+      </div>
     );
   }
 }

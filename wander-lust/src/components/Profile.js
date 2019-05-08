@@ -33,7 +33,8 @@ class Profile extends React.Component {
             position: 'absolute',
             width: '70%',
             top: '15%',
-            left: '10%'
+            left: '10%',
+            fontFamily: 'Overlock'
         }
 
         return this.props.user.resRooms.map(resRoom => {
@@ -61,7 +62,7 @@ class Profile extends React.Component {
     render() {
         return (
             <div className="sepia">
-               <h1>Welcome to your profile {this.props.user.name}</h1>
+               <h1 style={{fontFamily: 'Overlock'}}>Welcome to your profile {this.props.user.name}</h1>
                <br/>
                <br/>
                 <div>

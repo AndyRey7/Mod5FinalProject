@@ -24,7 +24,6 @@ export default class HotelContainer extends React.Component {
 
     allHotels = () => {
          return this.state.hotels.map(hotel => {
-             //const room = hotel.rooms.map(r => <HotelCard room={r} />)
             return <HotelCard key={hotel.id} hotel={hotel} handleClick={this.handleClick}/>
         })
 
@@ -33,7 +32,7 @@ export default class HotelContainer extends React.Component {
     render() {
         return (
             <div className= "sepia">
-                <h1>Hotels!</h1>
+                <h1 className="globalFont">Hotels!</h1>
                 <div className="ui four column grid">
                 {this.allHotels()}
                 </div>

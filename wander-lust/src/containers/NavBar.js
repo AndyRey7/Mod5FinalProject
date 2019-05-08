@@ -45,7 +45,7 @@ export default class NavBar extends React.Component {
       <div>
         <Navbar style={{backgroundColor: '#35687d', color:'#ccc'}} light expand="md">
           <NavbarBrand onClick={() => this.handleClickedLink('/')} >
-              <span className="nav-titles">WanderLust <i class="fas fa-globe-asia"></i></span>
+              <span className="nav-titles">WanderLust <i className="fas fa-globe-asia"></i></span>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -61,7 +61,7 @@ export default class NavBar extends React.Component {
                   <DropdownItem  >
                   <NavLink onClick={() => this.handleClickedLink('/hotels')}>
                       <Popup trigger={<i id="icons" className="fas fa-hotel"></i>}
-                      content={<span>Hotels</span>}
+                      content={<span className="navFont">Hotels</span>}
                       position='left center'
                       />
                   </NavLink>
@@ -70,7 +70,7 @@ export default class NavBar extends React.Component {
                   <DropdownItem>
                   <NavLink onClick={() => this.handleClickedLink('/rooms')}>
                       <Popup trigger={<i id="icons" className="fas fa-bed"></i>}
-                      content={<span>Rooms</span>}
+                      content={<span className="navFont">Rooms</span>}
                       position='left center'
                       />
                   </NavLink>
@@ -79,7 +79,7 @@ export default class NavBar extends React.Component {
                   <DropdownItem>
                   <NavLink onClick={() => this.handleClickedLink('/profile')}>
                       <Popup trigger={<i id="icons" className="fas fa-address-card"></i>}
-                      content={<span>Profile</span>}
+                      content={<span className="navFont">Profile</span>}
                       position='left center'
                       />
                   </NavLink>
@@ -88,7 +88,7 @@ export default class NavBar extends React.Component {
                   <DropdownItem style={{backgroundColor: '#35687d', color:'#ccc'}}>
                     <NavItem onClick={this.handleClick}>
                     <Popup trigger={<i id="signout" className="fas fa-sign-out-alt"></i>}
-                    content={<span>Log Out</span>}
+                    content={<span className="navFont">Log Out</span>}
                     position='left center'
                     />
                     </NavItem>

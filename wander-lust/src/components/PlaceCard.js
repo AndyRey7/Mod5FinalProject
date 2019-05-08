@@ -2,10 +2,10 @@ import React from 'react';
 import { Rate } from 'antd';
 
 
-const PlaceCard = (({ info, key }) => {
+const PlaceCard = (({ info }) => {
   const { address, distanceText, name, openNow, photoUrl, priceLevel, rating, timeText } = info;
   return (
-    <div key={key} className="col-3 w-100 mx-4 my-4">
+    <div  className="col-3 w-100 mx-4 my-4">
       <img src={photoUrl} className="image-wrapper-sm mb-2" alt="place" />
       <div className="card">
         <div className="card-body">

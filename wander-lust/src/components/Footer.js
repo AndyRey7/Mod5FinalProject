@@ -10,7 +10,7 @@ const Footer = () => {
     }
     return (
         <section className="white-text">
-            <span style={style}>Wanderlust <i className="copyright outline icon"></i>  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andy-reyes-3b16ba6a/"><i class="fab fa-linkedin"></i></a></span>
+            <span style={style}>Wanderlust <i className="copyright outline icon"></i>  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andy-reyes-3b16ba6a/"><i className="fab fa-linkedin"></i></a></span>
         </section>
     )
 
