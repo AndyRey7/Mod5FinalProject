@@ -1,4 +1,4 @@
-# WanderLust - A place for travel bugs
+# WanderLust
 
 ## Author
 
