@@ -21,6 +21,7 @@ To get you going, I've got a back-end with hotels waiting to be booked! To get t
 * User can sign-up or login and view their profile page
 * User can view a list of Hotels and types of rooms in that hotel
 * User can make a reservation to a room from a hotel
+* User can check out nearby restaurants from their booked hotel
 * User can remove a reservation from their profile page
 * User can delete their account
 
@@ -35,4 +36,5 @@ To get you going, I've got a back-end with hotels waiting to be booked! To get t
 * React
 * Ruby on Rails API
 * Google Maps API
+* Places API
 * Styling with ReactStrap, Semantic UI React, CSS
